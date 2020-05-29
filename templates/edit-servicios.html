@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+
+{% block contenido %}
+  <div class="formregis">
+    <h1 class="h4 text-gray-900 mb-4" id="text30" style="text-align: center;">Editar servicio</h1>
+    <form action="/update-servicios/{{servicio.0}}" method="POST"> 
+      <label for="CliNumDoc">Selecciona el num. doc. del cliente</label>
+      <select name="CliNumDoc" class="form-control form-group custom-select" id="selectdesp">
+        {% for cliente in clientes%}
+        <option value="{{ cliente.0 }}">
+          {{ cliente.0 }}
+          {% endfor %}
+        </option>
+      </select>
+      <label for="IdEquipo">Selecciona el Id del equipo</label>
+      <select name="IdEquipo" class="form-control form-group custom-select" id="selectdesp">
+        {% for equipo in equipos%}
+        <option value="{{ equipo.0 }}">
+          {{ equipo.0 }}
+          {% endfor %}
+        </option>
+      </select>
+      <label for="SerFechAsig">Fecha cita para reparación</label>
+      <input type="date" name="SerFechAsig" class="form-control form-control-user" required>
+      <label for="SerHorAsig">Hora cita para reparación</label>
+      <input type="time" name="SerHorAsig" class="form-control form-control-user" required>
+      <input type="text" name="SerClasifica" class="form-control form-control-user" placeholder="Clasificación">
+      <label for="UsuNumDoc">Selecciona el técnico</label>
+      <select name="UsuNumDoc" class="form-control form-group custom-select" id="selectdesp">
+        {% for tecnico in tecnicos%}
+        <option value="{{ tecnico.3 }}">
+          {{ tecnico.3 }}
+          {% endfor %}
+        </option>
+      </select>
+      <input type="text" name="SerDes" class="form-control form-control-user" placeholder="Descripción">
+      <select name="Estado" class="form-control form-group custom-select" id="selectdesp">
+        <option value="ASIGNADO">Asignado</option>
+        <option value="EJECUCION">En ejecución</option>
+        <option value="FINALIZADO">Finalizado</option>
+      </select>
+      <button type="submit" class="btn btn-success btn-block" id="boton-registro">Actualizar</button>
+    </form>
+  </div>
+{% endblock contenido %}

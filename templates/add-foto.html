@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+
+{% block contenido %}
+  <div class="formregis">
+    <h1 class="h4 text-gray-900 mb-4" id="text30" style="text-align: center;">Subir imagen</h1>
+    <form action="/add_foto" method="POST">
+      <label for="IdServicio">Selecciona el Id del servicio</label>
+      <select name="IdServicio" class="form-control form-group custom-select" id="selectdesp">
+        {% for servicio in servicios%}
+        <option value="{{ servicio.0 }}">
+          {{ servicio.0 }}
+          {% endfor %}
+        </option>
+      </select>
+      <input type="text" name="FotoTipo" class="form-control form-control-user" placeholder="Tipo">
+      <input type="text" name="FotoDes" class="form-control form-control-user" placeholder="Descripción">
+      <input type="file" name="Imagen" class="form-control" id="archivo">
+      <button type="submit" class="btn btn-success btn-block" id="boton-registro">Crear</button>
+    </form>
+  </div>
+
+{% endblock contenido %}

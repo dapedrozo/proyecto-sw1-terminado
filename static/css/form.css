@@ -1,0 +1,200 @@
+.formregis{
+    width:600px;
+    margin:auto;
+    background-color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    border-radius: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titregis{
+    text-align: center;
+    margin: 0;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.formregis>form>input{
+    margin-bottom: 15px;
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#selectdesp{
+    margin-bottom: 15px;
+    font-size: 15px;
+    border-radius: 20px;
+    height: 55px;
+    padding:.375rem .75rem;
+    padding-left:25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+[type="time"]::-webkit-inner-spin-button {
+    display: none;
+  }
+
+#archivo{
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 15px;
+    border-radius: 20px;
+    height: 42px;
+    padding:.375rem .75rem;
+    padding-left:25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+#boton-registro{
+    background-color: #00acc1;
+    border-color: #00acc1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.botonesiniciales{
+    margin: auto;
+    
+}
+#boton-index1{
+    background-color: #4e73df;
+    border-color: #4e73df;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    line-height: 90px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    height: 100px;
+    width: 250px;
+}
+#boton-index2{
+    background-color: #f6c23e;
+    border-color: #f6c23e;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    line-height: 90px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    height: 100px;
+    width: 250px;
+}
+#boton-index3{
+    background-color: #1cc88a;
+    border-color: #1cc88a;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    line-height: 90px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    height: 100px;
+    width: 250px;
+}
+#boton-index4{
+    background-color: #00acc1;
+    border-color: #00acc1;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    line-height: 90px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    height: 100px;
+    width: 250px;
+}
+#boton-registro:hover{
+    background-color: #039be5;
+    border-color: #039be5;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+#text15{
+    font-size: 15px;
+}
+#text20{
+    font-size: 20px;
+}
+#text25{
+    font-size: 25px;
+}
+#text30{
+    font-size: 30px;
+}
+#text35{
+    font-size: 35px;
+}
+
+#pimpam{
+    text-align: center;
+    text-decoration: none;
+}
+#pim{
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+
+#boton-olvidaste:hover{
+    background-color: #72912B;
+    border-color: #72912B;
+}
+
+#boton-ingresa{
+    background-color: #F08080;
+    border-color: #F08080;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#boton-ingresa:hover{
+    background-color: #CD5C5C;
+    border-color: #CD5C5C;
+}
+
+.back-login-image{
+    background-image:url("/static/img/soportetecnico-4\(original\).png");
+    background-position:center;
+    background-size:cover}
+
+.vistauser{
+    width: 100%;
+}
+
+@media (max-width:650px){
+    .formregis{
+        width: 90%;
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+    .formregis>input{
+        margin-bottom: 10px;
+        font-size: 15px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    #boton-olvidaste{
+        width: 100%;
+    }
+    #boton-ingresa{
+        width: 100%;
+    }
+    .vistauser{
+    width: 100%;
+    }
+}

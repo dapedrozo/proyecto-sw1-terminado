@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block contenido %}
+  <div class="formregis">
+    <h1 class="h4 text-gray-900 mb-4" id="text30" style="text-align: center;">Editar reporte</h1>
+    <form action="/update-reportes/{{reporte.0}}" method="POST"> 
+      <label for="CliNumDoc">Selecciona el cliente</label>
+      <select name="CliNumDoc" class="form-control form-group custom-select" id="selectdesp">
+        {% for cliente in clientes%}
+        <option value="{{ cliente.0 }}">
+          {{ cliente.0 }}
+          {% endfor %}
+        </option>
+      </select> 
+      <input type="text" name="RepTipo" class="form-control form-control-user" placeholder="tipo de reporte" value="{{ reporte.4 }}">
+      <select name="Estado" class="form-control form-group custom-select" id="selectdesp">
+        <option value="aprobado">Aprobado</option>
+        <option value="revision">En revisión</option>
+        <option value="corregir">Realizar correcciones</option>
+      </select>
+      <input type="text" name="LinkDrive" class="form-control form-control-user" placeholder="Link de drive" value="{{ reporte.5 }}">
+      <button type="submit" class="btn btn-success btn-block" id="boton-registro">Actualizar</button>
+    </form>
+  </div>
+{% endblock contenido %}

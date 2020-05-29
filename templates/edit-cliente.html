@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+
+{% block contenido %}
+  <div class="formregis">
+    <h1 class="h4 text-gray-900 mb-4" id="text30" style="text-align: center;">Editar cliente</h1>
+    <form action="/update-cliente/{{cliente.0}}" method="POST"> 
+      <input type="text" name="CliNomRazSoc" class="form-control form-control-user" placeholder="Nombre o razón social" value="{{ cliente.4 }}">
+      <input type="text" name="CliTipoDoc" class="form-control form-control-user" placeholder="Tipo de documento" value="{{ cliente.5 }}">
+      <input type="text" name="CliNumDoc" class="form-control form-control-user" placeholder="Número de documento" value="{{ cliente.0 }}">
+      <input type="number" name="CliTel" class="form-control form-control-user" placeholder="Telefono" value="{{ cliente.2 }}">
+      <input type="text" name="CliDir" class="form-control form-control-user" placeholder="Dirección" value="{{ cliente.1 }}">
+      <select name="IdEmpresa" class="form-control form-group custom-select" id="selectdesp">
+        {% for empresa in empresas%}
+        <option value="{{ empresa.0 }}">
+          {{ empresa.0 }}
+          {% endfor %}
+        </option>
+      </select>
+      <button type="submit" class="btn btn-success btn-block" id="boton-registro">Actualizar</button>
+    </form>
+  </div>
+{% endblock contenido %}

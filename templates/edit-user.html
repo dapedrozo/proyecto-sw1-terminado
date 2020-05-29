@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+
+{% block contenido %}
+  <div class="formregis">
+    <h1 class="h4 text-gray-900 mb-4" id="text30" style="text-align: center;">Editar usuario</h1>
+    <form action="/update-usuarios/{{usuario.3}}" method="POST"> 
+      <input type="text" name="UsuNom" class="form-control form-control-user" placeholder="Nombre" value="{{ usuario.0 }}">
+      <input type="text" name="UsuApe" class="form-control form-control-user" placeholder="Apellido" value="{{ usuario.1 }}">
+      <input type="text" name="UsuTipDoc" class="form-control form-control-user" placeholder="Tipo de documento" value="{{ usuario.2 }}">
+      <input type="text" name="UsuNumDoc" class="form-control form-control-user" placeholder="Número de documento" value="{{ usuario.3 }}">
+        <select name="UsuTipo" class="form-control form-group custom-select" id="selectdesp">
+          <option value="tecnico">Técnico</option>
+          <option value="administrador">Administrador</option>
+        </select>
+      <input type="text" name="UsuEstado" class="form-control form-control-user" placeholder="Estado de usuario" value="{{ usuario.5 }}">
+      <input type="number" name="UsuTel" class="form-control form-control-user" placeholder="Telefono" value="{{ usuario.6 }}">
+      <input type="text" name="UsuDir" class="form-control form-control-user" placeholder="Dirección" value="{{ usuario.7 }}">
+      <input type="text" name="UsuTipoContrat" class="form-control form-control-user" placeholder="Tipo de contrato" value="{{ usuario.8 }}">
+      <label for="UsuVenciContrat">Fecha vencimiento contrato</label>
+      <input type="date" name="UsuVenciContrat" class="form-control form-control-user" required>
+      <input type="text" name="UsuEstadoContrat" class="form-control form-control-user" placeholder="Estado del contrato" value="{{ usuario.12 }}">
+      <input type="password" name="Usupass" class="form-control form-control-user" placeholder="Contraseña" value="{{ usuario.13 }}">
+      <select name="IdEmpresa" class="form-control form-group custom-select" id="selectdesp">
+        {% for empresa in empresas%}
+        <option value="{{ empresa.0 }}">
+          {{ empresa.0 }}
+          {% endfor %}
+        </option>
+      </select>
+      <button type="submit" class="btn btn-success btn-block" id="boton-registro">Actualizar</button>
+    </form>
+  </div>
+{% endblock contenido %}

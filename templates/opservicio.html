@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+
+{% block contenido %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{ message }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Servicios</h1>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- crear servicio -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card bg-primary text-white shadow">
+                <a class="card-body" href="/add-servicio" id="pimpam">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Crear servicio</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- eliminar servicio 
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card bg-danger text-white shadow">
+                <a class="card-body" href="/deletec" id="pimpam">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Eliminar servicios</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+        -->
+        </div>
+        <!-- /.container-fluid -->
+
+
+        <div class="vistauser">
+          
+          <table class="table table-striped table-bordered bg-white table-sm">
+              <thead>
+                  <tr>
+                      <td>cliente</td>
+                      <td>equipo</td>
+                      <td>Fecha registro</td>
+                      <td>Hora registro</td>
+                      <td>Fecha cita</td>
+                      <td>Hora cita</td>
+                      <td>clasificación</td>
+                      <td>técnico</td>
+                      <td>desc.</td>
+                      <td>estado</td>
+                      <td>Opc.</td>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for servicio in servicios%}
+                  <tr>
+                      <td>{{ servicio.1 }}</td>
+                      <td>{{ servicio.2 }}</td>
+                      <td>{{ servicio.4 }}</td>
+                      <td>{{ servicio.5 }}</td>
+                      <td>{{ servicio.6 }}</td>
+                      <td>{{ servicio.7 }}</td>
+                      <td>{{ servicio.8 }}</td>
+                      <td>{{ servicio.9 }}</td>
+                      <td>{{ servicio.3 }}</td>
+                      <td>{{ servicio.10 }}</td>
+                      <td>
+                          <a href="/edit-servicios/{{ servicio.0 }}" class="btn btn-secondary btn-edit" id="pim">Actualizar</a>
+                          <a href="/delete-servicios/{{ servicio.0 }}" class="btn btn-danger btn-delete"id="pim">Eliminar</a>
+                      </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
+
+      </div>
+
+{% endblock contenido %}

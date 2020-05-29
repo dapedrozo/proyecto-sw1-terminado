@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block contenido %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{ message }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            {%if session2 %}
+            <h1 class="h3 mb-0 text-gray-800">Bienvenido {{ session2 }}</h1>
+            {%endif%}
+           <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+          </div>
+          
+          <!-- Content Row -->
+          <div class="row">
+
+            <div class="botonesiniciales">
+              {% if session == "ADMIN" %}
+              <a href="/opuser" class="btn btn-secondary btn-edit" id="boton-index1">Usuarios</a>
+              <a href="/opclien" class="btn btn-secondary btn-edit" id="boton-index2">Clientes</a>
+              <a href="/opequipo" class="btn btn-secondary btn-edit" id="boton-index4">Equipos</a>
+              {%endif%}
+              {% if session == "TECNICO" %}
+              <a href="/opfoto" class="btn btn-secondary btn-edit" id="boton-index1">Fotos servicios</a>
+              {%endif%}
+              <a href="/oprepor" class="btn btn-secondary btn-edit" id="boton-index3">Reportes</a>
+              
+              
+            </div>
+
+
+          <!-- Content Row -->
+          <div class="vistauser">
+          
+            <table class="table table-striped table-bordered bg-white table-sm">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>cliente</td>
+                        <td>NIT</td>
+                        <td>equipo</td>
+                        <td>direccion</td>
+                        <td>telefono cliente</td>
+                        <td>Fecha cita</td>
+                        <td>Hora cita</td>
+                        <td>descripcion</td>
+                        {%if session%}
+                        {% if session == "ADMIN" %}
+                        <td>Cedula Tecnico</td>
+                        {%endif%}
+                        {%endif%}
+                        <td>estado</td>
+                        <td>Opc.</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for servicio in servicios%}
+                    <tr>
+                        <td>{{ servicio.6 }}</td>
+                        <td>{{ servicio.4 }}</td>
+                        <td>{{ servicio.0 }}</td>
+                        <td>{{ servicio.8 }}</td>
+                        <td>{{ servicio.1 }}</td>
+                        <td>{{ servicio.2 }}</td>
+                        <td>{{ servicio.12 }}</td>
+                        <td>{{ servicio.13 }}</td>
+                        <td>{{ servicio.9 }}</td>
+                        {%if login%}
+                        {% if session == "ADMIN" %}
+                        <td>{{ servicio.15 }}</td>
+                        {%endif%}
+                        {%endif%}
+                        <td>{{ servicio.16 }}</td>
+                        <td>
+                            <a href="/edit-servicios/{{ servicio.6 }}" class="btn btn-secondary btn-edit" id="pim">Actualizar</a>
+                            <a href="/delete-servicios/{{ servicio.6 }}" class="btn btn-danger btn-delete"id="pim">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+    </div>
+    
+{% endblock contenido %}

@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+
+{% block contenido %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{ message }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Usuarios</h1>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+            <!--{% if session == "ADMIN" %}-->
+            <!-- crear usuario -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card bg-primary text-white shadow">
+                <a class="card-body" href="/add-user" id="pimpam">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Crear usuario</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+           <!-- {% endif %}-->
+            <!-- actualizar usuario 
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card bg-success text-white shadow">
+                <a class="card-body" href="/actutec" id="pimpam">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Actualizar datos del usuario</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            -->
+            <!--
+             ver usuario
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card bg-info text-white shadow">
+                <a class="card-body" href="/vertec" id="pimpam">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Ver usuarios</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          -->
+            <!-- eliminar usuario 
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card bg-danger text-white shadow">
+                <a class="card-body" href="/deletec" id="pimpam">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Eliminar usuarios</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+        -->
+        </div>
+        <!-- /.container-fluid -->
+
+
+        <div class="vistauser">
+          
+          <table class="table table-striped table-bordered bg-white table-sm">
+              <thead>
+                  <tr>
+                      <td>Nombre</td>
+                      <td>Apellido</td>
+                      <td>Tipo doc.</td>
+                      <td>Número doc.</td>
+                      <td>Tipo</td>
+                      <td>Tel.</td>
+                      <td>Dir.</td>
+                      <td>Contrato</td>
+                      <td>Fecha de registro</td>
+                      <td>Hora de registro</td>
+                      <td>Fecha final. contr.</td>
+                      <td>Estado contr.</td>
+                      <td>Usuario</td>
+                      <td>Opc.</td>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for usuario in usuarios%}
+                  <tr>
+                      <td>{{ usuario.0 }}</td>
+                      <td>{{ usuario.1 }}</td>
+                      <td>{{ usuario.2 }}</td>
+                      <td>{{ usuario.3 }}</td>
+                      <td>{{ usuario.4 }}</td>
+                      <td>{{ usuario.6 }}</td>
+                      <td>{{ usuario.7 }}</td>
+                      <td>{{ usuario.8 }}</td>
+                      <td>{{ usuario.9 }}</td>
+                      <td>{{ usuario.10 }}</td>
+                      <td>{{ usuario.11 }}</td>
+                      <td>{{ usuario.12 }}</td>
+                      <td>{{ usuario.13 }}</td>
+                      <td>
+                          <a href="/edit-usuarios/{{ usuario.3 }}" class="btn btn-secondary btn-edit" id="pim">Actualizar</a>
+                          <a href="/delete-usuarios/{{ usuario.3 }}" class="btn btn-danger btn-delete"id="pim">Eliminar</a>
+                      </td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
+
+      </div>
+{% endblock contenido %}

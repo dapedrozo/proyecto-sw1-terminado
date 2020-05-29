@@ -1,0 +1,23 @@
+SELECT  U.UsuNom,
+	U.UsuApe,
+	U.UsuTipDoc,
+	U.UsuNumDoc,
+	U.UsuTipo,
+	U.UsuEstado,
+	U.UsuTel,
+	U.UsuDir,
+	U.UsuTipoContrat,
+	U.UsuFechRegist,
+	U.UsuHorRegist,
+	U.UsuVenciContrat,
+	U.UsuEstadoContrat,
+	U.UsuUser,
+	U.Usupass, 
+	U.EmpresaId,
+	E.IdEmpresa,
+	E.EmpNomRazSoc,
+	E.EmpTipoDoc,
+	E.EmpNumDoc
+	FROM usuarios AS U
+	    INNER JOIN empresa AS E ON U.EmpresaId=E.IdEmpresa
+		 WHERE U.UsuUser='david.pedrozo' AND U.Usupass='12345' AND U.UsuEstadoContrat='ACTIVO'
