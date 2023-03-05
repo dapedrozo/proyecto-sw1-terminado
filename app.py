@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = '1098741116'
-app.config['MYSQL_DB'] = 'software1'
+app.config['MYSQL_DB'] = 'monsteracmebd'
 
 
 #ahora vamos a inicializar una sesion es decir datos que guarda nuestro servidor para luego poder reutilizarlos
